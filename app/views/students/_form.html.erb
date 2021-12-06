@@ -1,0 +1,62 @@
+<%= form_with(model: student) do |form| %>
+  <% if student.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(student.errors.count, "error") %> prohibited this student from being saved:</h2>
+
+      <ul>
+        <% student.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    
+    <%= form.text_field :sid, class:"form-control", placeholder:"Student Id" %>
+  </div>
+
+  <div class="field">
+    
+    <%= form.text_field :first_name, class:"form-control", placeholder:"First Name" %>
+  </div>
+
+  <div class="field">
+    
+    <%= form.text_field :last_name, class:"form-control", placeholder:"Last Name" %>
+  </div>
+
+  <div class="field">
+   
+    <%= form.text_field :dateofbirth, class:"form-control", placeholder:"Date of Birth dd/mm/yyyy" %>
+  </div>
+
+  <div class="field">
+    
+    <%= form.text_field :email, class:"form-control", placeholder:"Enter Email" %>
+  </div>
+
+  <div class="field">
+    
+    <%= form.text_field :phone_no, class:"form-control", placeholder:"Phone Number" %>
+  </div>
+
+  <div class="field">
+   
+    <%= form.text_field :gender, class:"form-control", placeholder:"Enter Gender" %>
+  </div>
+
+  <div class="field">
+    
+    <%= form.text_field :address, class:"form-control", placeholder:"Enter Address" %>
+  </div>
+
+  <div class="field">
+   
+    <%= form.text_field :city, class:"form-control", placeholder:"Enter City" %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit class:'btn btn-secondary' %>
+  </div>
+<% end %>
